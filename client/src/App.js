@@ -4,8 +4,12 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Reg from "./components/Reg";
+import Login from "./components/Login";
+
 
 const App = () => (
+  
   <Router>
     <div>
       <Nav />
@@ -14,6 +18,8 @@ const App = () => (
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
         <Route component={NoMatch} />
+        <Route exact path="/register" component={Reg} />
+        <Route exact path="/login" component={Login} />
       </Switch>
     </div>
   </Router>
