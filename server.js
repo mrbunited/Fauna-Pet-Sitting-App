@@ -6,8 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Requiring passport as we've configured it
-var passport = require("./controllers/passport");
-var db = require("./models");
+var passport = require("./config/passport");
 
 // Creating express app and configuring middleware needed for authentication
 app.use(bodyParser.urlencoded({ extended: true }));
