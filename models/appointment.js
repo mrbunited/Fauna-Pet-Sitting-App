@@ -11,6 +11,6 @@ const appointmentSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const Appointment = mongoose.model("Customer", appointmentSchema);
+const Appointment = mongoose.model("Appointment", appointmentSchema);
 
 module.exports = Appointment;
