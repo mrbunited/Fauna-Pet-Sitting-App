@@ -84,7 +84,7 @@ function SignIn(props) {
               color="primary"
               className={classes.submit}
             >
-              Sign in
+              Sign Up
             </Button>
           </form>
         </Paper>
