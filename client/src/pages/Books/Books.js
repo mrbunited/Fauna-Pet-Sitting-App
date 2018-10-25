@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
-import Jumbotron from "../../components/Jumbotron";
+import SignIn from "../../components/SignIn";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
@@ -58,9 +58,9 @@ class Books extends Component {
       <Container fluid>
         <Row>
           <Col size="md-6">
-            <Jumbotron>
+            <SignIn>
               <h1>What Books Should I Read?</h1>
-            </Jumbotron>
+            </SignIn>
             <form>
               <Input
                 value={this.state.title}
