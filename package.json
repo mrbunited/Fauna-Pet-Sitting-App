@@ -1,9 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "express": "^4.16.4",
-    "mongoose": "^5.3.4"
-=======
   "name": "mern",
   "version": "1.0.0",
   "description": "",
@@ -30,6 +25,5 @@
     "express": "^4.15.4",
     "mongoose": "^5.0.17",
     "if-env": "^1.0.4"
->>>>>>> 7d47179175a65bd899306470d54bc98eb4e376f7
   }
 }

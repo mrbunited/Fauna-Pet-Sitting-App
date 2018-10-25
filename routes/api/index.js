@@ -10,6 +10,6 @@ router.use("/appointments", appointmentRoutes);
 router.use("/customers", customerRoutes);
 
 // Petsitter routes
-router.use("/petSitters", petSitterRoutes);
+router.use("/petsitters", petSitterRoutes);
 
 module.exports = router;
