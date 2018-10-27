@@ -22,8 +22,8 @@ const styles = theme => ({
     marginRight: theme.spacing.unit * 3,
     [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
       width: 400,
-      marginLeft: 'auto',
-      marginRight: 'none',
+      marginLeft: 'none',
+      marginRight: 'auto',
     },
   },
   paper: {
@@ -46,21 +46,21 @@ const styles = theme => ({
   },
 });
 
-function SignIn(props) {
+function PetSitter(props) {
   const { classes } = props;
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Grid item xs={12} sm={6}>
+
       <main className={classes.layout}>
-      
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Customer
+            Petsitter
           </Typography>
           <form className={classes.form}>
             <FormControl margin="normal" required fullWidth>
@@ -93,13 +93,12 @@ function SignIn(props) {
         </Paper>
       </main>
       </Grid>
-
     </React.Fragment>
   );
 }
 
-SignIn.propTypes = {
+PetSitter.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SignIn);
+export default withStyles(styles)(PetSitter);
