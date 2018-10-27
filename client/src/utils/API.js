@@ -1,20 +1,52 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
+  // Gets all petSitters
+  getPetSitters: function() {
+    return axios.get("/api/petSitters");
+  },
+  // Gets the petSitters with the given id
+  getPetSitter: function(id) {
+    return axios.get("/api/petSitters/" + id);
+  },
+  // Deletes the petSitter with the given id
+  deletePetSitter: function(id) {
+    return axios.delete("/api/petSitters/" + id);
+  },
+  // Saves a petSitter to the database
+  savePetSitter: function(petSitterData) {
+    return axios.post("/api/petSitters", petSitterData);
+  },
+  // Gets all customers
+  getCustomers: function() {
+    return axios.get("/api/customers");
+  },
+  // Gets the customer with the given id
+  getCustomer: function(id) {
+    return axios.get("/api/customers/" + id);
+  },
+  // Deletes the customer with the given id
+  deleteCustomer: function(id) {
+    return axios.delete("/api/customers/" + id);
+  },
+  // Saves a customer to the database
+  saveCustomer: function(customerData) {
+    return axios.post("/api/customers", customerData);
+  },
+  // Gets all appointments
   getBooks: function() {
-    return axios.get("/api/books");
+    return axios.get("/api/appointments");
   },
-  // Gets the book with the given id
+  // Gets the appointment with the given id
   getBook: function(id) {
-    return axios.get("/api/books/" + id);
+    return axios.get("/api/appointments/" + id);
   },
-  // Deletes the book with the given id
+  // Deletes the appointment with the given id
   deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+    return axios.delete("/api/appointments/" + id);
   },
-  // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  // Saves an appointment to the database
+  saveBook: function(appointmentData) {
+    return axios.post("/api/appointments", appointmentData);
   }
 };
