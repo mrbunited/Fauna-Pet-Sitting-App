@@ -26,6 +26,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "if-env": "^1.0.4",
-    "mongoose": "^5.0.17"
+    "jquery": "^3.3.1",
+    "mongoose": "^5.0.17",
+    "react-reorder": "^3.0.0-alpha.7"
   }
 }
