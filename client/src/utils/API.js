@@ -34,19 +34,19 @@ export default {
     return axios.post("/api/customers", customerData);
   },
   // Gets all appointments
-  getBooks: function() {
+  getApppointments: function() {
     return axios.get("/api/appointments");
   },
   // Gets the appointment with the given id
-  getBook: function(id) {
+  getAppointment: function(id) {
     return axios.get("/api/appointments/" + id);
   },
   // Deletes the appointment with the given id
-  deleteBook: function(id) {
+  deleteAppointment: function(id) {
     return axios.delete("/api/appointments/" + id);
   },
   // Saves an appointment to the database
-  saveBook: function(appointmentData) {
+  saveAppointment: function(appointmentData) {
     return axios.post("/api/appointments", appointmentData);
   }
 };
