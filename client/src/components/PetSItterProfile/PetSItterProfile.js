@@ -19,7 +19,7 @@ import ListItem from '@material-ui/core/ListItem';
 
 const styles = theme => ({
   card: {
-    maxWidth: 400,
+    maxWidth: 500,
   },
   media: {
     height: 0,
@@ -42,8 +42,8 @@ const styles = theme => ({
     transform: 'rotate(180deg)',
   },
   avatar: {
-    width: 60,
-    height: 60,
+    width: 90,
+    height: 90,
     backgroundColor: red[500],
   },
 });
