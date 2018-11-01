@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   container: {
@@ -20,6 +20,12 @@ const styles = theme => ({
   },
   menu: {
     width: 200,
+  },
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
   },
 });
 
@@ -85,9 +91,11 @@ class SelectionBar extends React.Component {
           ))}
         </TextField>
 
-
+   <Button variant="contained" color="primary" className={classes.button}>
+      Search
+    </Button>
       </form>
-
+   
     );
   }
 }
