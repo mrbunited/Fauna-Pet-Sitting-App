@@ -1,31 +1,70 @@
-import React, { Component } from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import React, { Component, Fragment } from "react";
 import PetSitterProfile from '../../components/PetSitterProfile';
 import Picker from '../../components/Picker';
 import SelectionBar from '../../components/SelectionBar';
 import PriceSlider from '../../components/PriceSlider';
-import API from "../../utils/API";
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+
+const styles = theme => ({
+  root: {
+    overflow: 'hidden',
+    padding: `0 ${theme.spacing.unit * 3}px`,
+  },
+  wrapper: {
+    maxWidth: 400,
+  },
+  paper: {
+    margin: theme.spacing.unit,
+    padding: theme.spacing.unit * 2,
+  },
+});
 
 class CustomerPage extends Component {
 
-
+  
   render() {
-    return (
-      <Container fluid>
-        <Row>
-          <Col size="md-6" sm-12>
-          <h1> Find you pet sitter!</h1>
-            <Picker />
-            <SelectionBar />
-            <PriceSlider />
-          </Col>
-          <Col size="md-6" sm-12>
-            <PetSitterProfile />
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
-}
+    
+    const { classes } = this.props;
 
-export default CustomerPage;
+    return (
+<Fragment>
+      <Paper className={classes.paper}>
+        <Grid container wrap="nowrap" spacing={16}>
+          <Grid item>
+            <h1> Find you pet sitter!</h1>
+          </Grid>
+          <Grid item>
+            <Picker />
+          </Grid> 
+          <Grid item>
+              <SelectionBar />
+          </Grid>
+          <Grid item>
+              <PriceSlider />
+          </Grid>
+          <Grid>
+              <Button> Search </Button>
+          </Grid>
+
+        </Grid>   
+
+      </Paper>  
+      
+      
+              
+<PetSitterProfile />
+</Fragment>
+        );
+      }
+    };
+    
+    
+    CustomerPage.propTypes = {
+      classes: PropTypes.object.isRequired,
+    };
+    
+    export default withStyles(styles)(CustomerPage);

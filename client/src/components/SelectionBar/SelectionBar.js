@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import FormControl from '@material-ui/core/FormControl';
 
 const styles = theme => ({
   container: {
@@ -20,6 +22,23 @@ const styles = theme => ({
   },
   menu: {
     width: 200,
+  },
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
+  },
+  root: {
+    overflow: 'hidden',
+    padding: `0 ${theme.spacing.unit * 3}px`,
+  },
+  wrapper: {
+    maxWidth: 400,
+  },
+  paper: {
+    margin: theme.spacing.unit,
+    padding: theme.spacing.unit * 2,
   },
 });
 
@@ -61,8 +80,9 @@ class SelectionBar extends React.Component {
     const { classes } = this.props;
 
     return (
-
+<Grid>
       <form className={classes.container} noValidate autoComplete="off">
+            <Grid item>
         <TextField
           id="standard-select-animalType"
           select
@@ -79,15 +99,16 @@ class SelectionBar extends React.Component {
           margin="normal"
         >
           {animalType.map(option => (
+            <Grid item>
             <MenuItem key={option.value} value={option.value}>
               {option.label}
             </MenuItem>
+            </Grid>
           ))}
         </TextField>
-
-
+        </Grid>
       </form>
-
+      </Grid> 
     );
   }
 }
