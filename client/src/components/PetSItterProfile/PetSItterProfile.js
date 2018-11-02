@@ -60,18 +60,22 @@ class PetSitterProfile extends React.Component {
    petsitters: []
   };
 
+
   componentDidMount() {
     this.getPetSitter();
   }
 
   getPetSitter = () => {
     API.getPetSitter()
-      .then(res => this.setState({ petsitters: res.data }))
+      .then(res =>  this.setState({ petsitters: res.data })
+)
       .catch(err => console.log(err));
   };
 
   render() {
     const { classes } = this.props;
+
+    
     return (
       <Container fluid>
         <Row>
@@ -80,23 +84,24 @@ class PetSitterProfile extends React.Component {
               <List>
                 {this.state.petsitters.map(petsitters => (
                   <ListItem key={petsitters._id}>
-                   
-
                         
 <Card className={classes.card}>
         <CardHeader
-          avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
-               <a href={"/petsitters/" + petsitters._id}></a>
-            </Avatar>
-          }
+          
           action={
             <Button>
             Book Now
             </Button>
           }
+          avatar={
+            <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
+               <a href={"/petsitters/" + petsitters._id}></a>
+            </Avatar>
+          }
+          disableTypography = {false}
           title={petsitters.first_name}
-          subheader={petsitters.address.zip}
+          subheader={petsitters.address.city}
+          // subheaderTypographyProps={<Typography><p> Full address : {petsitters.address.street} {petsitters.address.city} {petsitters.address.state} {petsitters.address.zip}</p></Typography>}
         />
         <CardContent>
           <Typography component="p">
