@@ -11,13 +11,17 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": "v10.11.0",
+    "yarn": "v1.10.1"
   },
   "dependencies": {
     "@material-ui/core": "^3.3.1",
@@ -26,6 +30,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "if-env": "^1.0.4",
-    "mongoose": "^5.0.17"
+    "jquery": "^3.3.1",
+    "mongoose": "^5.0.17",
+    "react-reorder": "^3.0.0-alpha.7"
   }
 }

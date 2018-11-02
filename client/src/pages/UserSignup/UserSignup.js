@@ -1,3 +1,12 @@
+import React, { Component } from "react";
+import DeleteBtn from "../../components/DeleteBtn";
+import SignIn from "../../components/SignIn";
+import API from "../../utils/API";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../../components/Grid";
+import { List, ListItem } from "../../components/List";
+import { Input, TextArea, FormBtn } from "../../components/Form";
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
@@ -13,8 +22,6 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
-import Social from '../social/index';
-
 
 const styles = theme => ({
   layout: {
@@ -48,21 +55,80 @@ const styles = theme => ({
   },
 });
 
-function PetSitter(props) {
-  const { classes } = props;
+class UserSignup extends Component {
+  state = {
+    first_name: [],
+    last_name: "",
+    address:{
+      street:"",
+      city: "",
+      state: "",
+      zip: ""
+    },
+    
+    phone: "",
+    email: "",
+    emergencyContact:{
+      vetHospital: "",
+      vetDocName: "",
+      vetPhone: ""
+    },
 
-  return (
+    pets: [],
+    date: { type: Date, default: Date.now }
+
+  };    
+
+  componentDidMount() {
+    this.loadBooks();
+  }
+
+  loadBooks = () => {
+    API.getCustomers()
+      .then(res =>
+        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
+  deleteBook = id => {
+    API.deleteBook(id)
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.author) {
+      API.saveBook({
+        title: this.state.title,
+        author: this.state.author,
+        synopsis: this.state.synopsis
+      })
+        .then(res => this.loadBooks())
+        .catch(err => console.log(err));
+    }
+  };
+
+  render() {
+    return (
     <React.Fragment>
       <CssBaseline />
       <Grid item xs={12} sm={6}>
-
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Petsitter
+            USER SIGNUP
           </Typography>
           <form className={classes.form}>
             <FormControl margin="normal" required fullWidth>
@@ -91,17 +157,16 @@ function PetSitter(props) {
             >
               Sign Up
             </Button>
-            <Social></Social>
           </form>
         </Paper>
       </main>
       </Grid>
     </React.Fragment>
-  );
+    );
+  }
 }
-
-PetSitter.propTypes = {
+UserSignup.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PetSitter);
+export default withStyles(styles)(UserSignup);
