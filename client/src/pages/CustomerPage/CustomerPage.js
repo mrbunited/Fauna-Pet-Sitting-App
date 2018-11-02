@@ -55,7 +55,6 @@ class CustomerPage extends Component {
       </Paper>  
       
       
-              
 <PetSitterProfile />
 </Fragment>
         );
