@@ -49,7 +49,7 @@ const styles = theme => ({
 });
 
 
-class PetSitterProfile extends React.Component {
+class ProfilePetSitter extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -150,8 +150,8 @@ I am an amazing pet sitter with experience with a wide array of animals. I will 
 }
 
 
-PetSitterProfile.propTypes = {
+ProfilePetSitter.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles) (PetSitterProfile);
+export default withStyles(styles) (ProfilePetSitter);

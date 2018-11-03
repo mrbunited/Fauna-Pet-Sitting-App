@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import PetSitterProfile from '../../components/PetSitterProfile';
+import PetSitterProfile from '../../components/ProfilePetSitter';
 import Picker from '../../components/Picker';
 import SelectionBar from '../../components/SelectionBar';
 import PriceSlider from '../../components/PriceSlider';
@@ -8,6 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import ProfilePetSitter from "../../components/ProfilePetSitter";
 
 const styles = theme => ({
   root: {
@@ -55,7 +56,7 @@ class CustomerPage extends Component {
       </Paper>  
       
       
-<PetSitterProfile />
+<ProfilePetSitter />
 </Fragment>
         );
       }
