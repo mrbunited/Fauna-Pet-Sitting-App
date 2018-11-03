@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import PetSitterProfile from '../../components/ProfilePetSitter';
 import Picker from '../../components/Picker';
 import SelectionBar from '../../components/SelectionBar';
 import PriceSlider from '../../components/PriceSlider';
