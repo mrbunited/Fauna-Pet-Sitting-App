@@ -62,11 +62,11 @@ class ProfilePetSitter extends React.Component {
 
 
   componentDidMount() {
-    this.getPetSitter();
+    this.getPetSitters();
   }
 
-  getPetSitter = () => {
-    API.getPetSitter()
+  getPetSitters = () => {
+    API.getPetSitters()
       .then(res =>  this.setState({ petsitters: res.data })
 )
       .catch(err => console.log(err));
