@@ -25,46 +25,60 @@ const styles = theme => ({
 
 class CustomerPage extends Component {
 
-  
+
   render() {
-    
+
     const { classes } = this.props;
 
     return (
-<Fragment>
-      <Paper className={classes.paper}>
-        <Grid container wrap="nowrap" spacing={16}>
-          <Grid item>
-            <h1> Find you pet sitter!</h1>
-          </Grid>
-          <Grid item>
-            <Picker />
-          </Grid> 
-          <Grid item>
-              <SelectionBar />
-          </Grid>
-          <Grid item>
-              <PriceSlider />
-          </Grid>
-          <Grid>
-              <Button> Search </Button>
-          </Grid>
 
-        </Grid>   
-
-      </Paper>  
-      
-      
+      <Grid container>
+        <Grid item md>
+          <Paper className={classes.paper}>
+            
+            <Grid container>
+              <Grid item>
+                <h1> Find you pet sitter!</h1>
+              </Grid>
               
-<PetSitterProfile />
-</Fragment>
-        );
-      }
-    };
-    
-    
-    CustomerPage.propTypes = {
-      classes: PropTypes.object.isRequired,
-    };
-    
-    export default withStyles(styles)(CustomerPage);
+              <Grid item>
+                <Picker />
+              </Grid>
+              
+              <Grid item>
+                <SelectionBar />
+              </Grid>
+              
+              <Grid item>
+                <PriceSlider />
+              </Grid>
+              
+              <Grid>
+                <Button> Search </Button>
+              </Grid>
+
+            </Grid>
+
+          </Paper>
+        </Grid>
+
+        <Grid item md>
+          <PetSitterProfile />
+        </Grid>
+
+        <Grid item md>
+          Google Maps
+        </Grid>
+
+      </Grid>
+
+    );
+  }
+};
+
+
+CustomerPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(CustomerPage);

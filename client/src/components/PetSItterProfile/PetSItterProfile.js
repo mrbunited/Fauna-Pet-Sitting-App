@@ -1,6 +1,6 @@
 import React from "react";
 import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
+import { Col, Row, Container } from "../Grid";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
@@ -20,6 +20,7 @@ import ListItem from '@material-ui/core/ListItem';
 const styles = theme => ({
   card: {
     maxWidth: 500,
+  
   },
   media: {
     height: 0,
@@ -145,7 +146,7 @@ I am an amazing pet sitter with experience with a wide array of animals. I will 
 }
 
 
-PetSitterProfile.propTypes = {
+PetSitterProfile.propTypes = {  
   classes: PropTypes.object.isRequired,
 };
 
