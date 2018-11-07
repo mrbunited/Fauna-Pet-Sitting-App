@@ -9,6 +9,7 @@ export default {
   getPetSitter: function(id) {
     return axios.get("/api/petSitters/" + id);
   },
+
   // Deletes the petSitter with the given id
   deletePetSitter: function(id) {
     return axios.delete("/api/petSitters/" + id);

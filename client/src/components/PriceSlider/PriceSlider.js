@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/lab/Slider';
 
+
 const styles = {
   root: {
     width: 300,
@@ -11,6 +12,7 @@ const styles = {
   slider: {
     padding: '22px 0px',
   },
+
 };
 
 
@@ -41,12 +43,19 @@ class PriceSlider extends React.Component {
     return (
       <div className={classes.root}>
         <Typography id="label">Price per night</Typography>
+
+<div>
+
         <Slider
           classes={{ container: classes.slider }}
           value={value}
           aria-labelledby="label"
           onChange={this.handleChange}
+          defaultValue={5 / 100}
+
         />
+
+</div>
       </div>
     );
   }

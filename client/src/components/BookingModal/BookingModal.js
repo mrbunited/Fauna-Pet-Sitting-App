@@ -33,7 +33,6 @@ const styles = theme => ({
 class SimpleModal extends React.Component {
   state = {
     open: false,
-    booking : [],
   };
 
   handleOpen = () => {
