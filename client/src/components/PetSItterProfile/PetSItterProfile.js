@@ -88,7 +88,7 @@ class PetSitterProfile extends React.Component {
         <CardHeader
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
-               <a href={"/petsitters/" + petsitters._id}></a>
+               {/* <a href={"/petsitters/" + petsitters._id}/> */}
             </Avatar>
           }
           action={

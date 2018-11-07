@@ -6,9 +6,9 @@ import twitter from './twitter.png'
 import config from '../config';
 
 class TwitterLogin extends Component{
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
     
     componentDidMount(){
         (function() {

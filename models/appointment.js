@@ -6,8 +6,8 @@ const appointmentSchema = new Schema({
   petSitterId: { type: String, required: true },
   startDate: {type: String, required: true},
   endDate: {type: String, required: true},
-  service: {type: String, required: true},
-  specialInstructions: {type: String, required: true},
+  petsToBeServiced: [],
+  serviceNotes: {type: String, required: true},
   date: { type: Date, default: Date.now }
 });
 

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import PetSitterProfile from '../../components/PetSitterProfile';
 import Picker from '../../components/Picker';
 import SelectionBar from '../../components/SelectionBar';
@@ -8,6 +8,8 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import Maps from "../../components/Maps";
+
 
 const styles = theme => ({
   root: {
@@ -33,28 +35,28 @@ class CustomerPage extends Component {
     return (
 
       <Grid container>
-        <Grid item md>
+        <Grid item xs={12}>
           <Paper className={classes.paper}>
             
             <Grid container>
-              <Grid item>
-                <h1> Find you pet sitter!</h1>
+              <Grid item sm>
+                <h1> Find your pet-sitter!</h1>
               </Grid>
               
-              <Grid item>
+              <Grid item sm> 
                 <Picker />
               </Grid>
               
-              <Grid item>
+              <Grid item sm>
                 <SelectionBar />
               </Grid>
               
-              <Grid item>
+              <Grid item sm>
                 <PriceSlider />
               </Grid>
               
-              <Grid>
-                <Button> Search </Button>
+              <Grid item sm>
+                <Button variant="contained" color="primary" className={classes.button}> Search </Button>
               </Grid>
 
             </Grid>
@@ -67,7 +69,7 @@ class CustomerPage extends Component {
         </Grid>
 
         <Grid item md>
-          Google Maps
+          <Maps />
         </Grid>
 
       </Grid>
