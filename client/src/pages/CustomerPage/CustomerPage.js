@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Maps from "../../components/Maps";
-
+import BookingModal from "../../components/BookingModal";
 
 const styles = theme => ({
   root: {
@@ -37,28 +37,32 @@ class CustomerPage extends Component {
       <Grid container>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            
+
             <Grid container>
               <Grid item sm>
                 <h1> Find your pet-sitter!</h1>
               </Grid>
-              
-              <Grid item sm> 
+
+              <Grid item sm>
                 <Picker />
               </Grid>
-              
+
               <Grid item sm>
                 <SelectionBar />
               </Grid>
-              
+
               <Grid item sm>
                 <PriceSlider />
               </Grid>
-              
+
               <Grid item sm>
                 <Button variant="contained" color="primary" className={classes.button}> Search </Button>
               </Grid>
 
+              <Grid item sm>
+
+                <BookingModal />
+              </Grid>
             </Grid>
 
           </Paper>

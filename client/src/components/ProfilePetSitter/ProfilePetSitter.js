@@ -16,6 +16,7 @@ import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import BookNowModal from "../../components/BookNowModal";
 
 const styles = theme => ({
   card: {
@@ -90,9 +91,7 @@ class ProfilePetSitter extends React.Component {
         <CardHeader
           
           action={
-            <Button>
-            Book Now
-            </Button>
+<BookNowModal />
           }
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">

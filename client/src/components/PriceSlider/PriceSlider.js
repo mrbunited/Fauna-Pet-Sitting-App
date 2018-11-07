@@ -40,7 +40,7 @@ class PriceSlider extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Typography id="label">Slider label</Typography>
+        <Typography id="label">Price per night</Typography>
         <Slider
           classes={{ container: classes.slider }}
           value={value}
