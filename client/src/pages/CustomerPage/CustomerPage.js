@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import ProfilePetSitter from '../../components/ProfilePetSitter';
 import Picker from '../../components/Picker';
 import SelectionBar from '../../components/SelectionBar';
 import PriceSlider from '../../components/PriceSlider';
@@ -7,7 +8,8 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import ProfilePetSitter from "../../components/ProfilePetSitter";
+import Maps from "../../components/Maps";
+
 
 const styles = theme => ({
   root: {
@@ -25,45 +27,60 @@ const styles = theme => ({
 
 class CustomerPage extends Component {
 
-  
+
   render() {
-    
+
     const { classes } = this.props;
 
     return (
-<Fragment>
-      <Paper className={classes.paper}>
-        <Grid container wrap="nowrap" spacing={16}>
-          <Grid item>
-            <h1> Find you pet sitter!</h1>
-          </Grid>
-          <Grid item>
-            <Picker />
-          </Grid> 
-          <Grid item>
-              <SelectionBar />
-          </Grid>
-          <Grid item>
-              <PriceSlider />
-          </Grid>
-          <Grid>
-              <Button> Search </Button>
-          </Grid>
 
-        </Grid>   
+      <Grid container>
+        <Grid item xs={12}>
+          <Paper className={classes.paper}>
+            
+            <Grid container>
+              <Grid item sm>
+                <h1> Find your pet-sitter!</h1>
+              </Grid>
+              
+              <Grid item sm> 
+                <Picker />
+              </Grid>
+              
+              <Grid item sm>
+                <SelectionBar />
+              </Grid>
+              
+              <Grid item sm>
+                <PriceSlider />
+              </Grid>
+              
+              <Grid item sm>
+                <Button variant="contained" color="primary" className={classes.button}> Search </Button>
+              </Grid>
 
-      </Paper>  
-      
-      
-<ProfilePetSitter />
-</Fragment>
-        );
-      }
-    };
-    
-    
-    CustomerPage.propTypes = {
-      classes: PropTypes.object.isRequired,
-    };
-    
-    export default withStyles(styles)(CustomerPage);
+            </Grid>
+
+          </Paper>
+        </Grid>
+
+        <Grid item md>
+          <ProfilePetSitter />
+        </Grid>
+
+        <Grid item md>
+          <Maps />
+        </Grid>
+
+      </Grid>
+
+    );
+  }
+};
+
+
+CustomerPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(CustomerPage);

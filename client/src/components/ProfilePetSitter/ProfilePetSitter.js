@@ -20,6 +20,7 @@ import ListItem from '@material-ui/core/ListItem';
 const styles = theme => ({
   card: {
     maxWidth: 500,
+  
   },
   media: {
     height: 0,
@@ -95,7 +96,7 @@ class ProfilePetSitter extends React.Component {
           }
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
-               <a href={"/petsitters/" + petsitters._id}></a>
+               {/* <a href={"/petsitters/" + petsitters._id}></a> */}
             </Avatar>
           }
           disableTypography = {false}
