@@ -12,27 +12,33 @@ import LockIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import Grid from '@material-ui/core/Grid';
-import Social from '../social/index';
+import SimpleModalWrapped from '../SimpleModalWrapped/SimpleModalWrapped';
+// import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   layout: {
     width: 'auto',
     display: 'block', // Fix IE 11 issue.
-    marginLeft: theme.spacing.unit * 3,
-    marginRight: theme.spacing.unit * 3,
+    // marginLeft: theme.spacing.unit * 3,
+    // marginRight: theme.spacing.unit * 3,
     [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
       width: 400,
-      marginLeft: 'auto',
-      marginRight: 'none',
+      // margin: '0 auto',
+      marginTop: theme.spacing.unit,
+      // marginBottom: theme.spacing.unit * 1,
+     margin: 'auto',
     },
+   
   },
+  
   paper: {
-    marginTop: theme.spacing.unit * 12,
+    marginTop: theme.spacing.unit,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+    padding: `${theme.spacing.unit * 1}px ${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px`,
+    marginBottom: theme.spacing.unit * 10,
+    
   },
   avatar: {
     margin: theme.spacing.unit,
@@ -44,7 +50,10 @@ const styles = theme => ({
   },
   submit: {
     marginTop: theme.spacing.unit * 3,
+    marginBottom: theme.spacing.unit * 2,
+    width: '100%'
   },
+  
 });
 
 function SignIn(props) {
@@ -53,9 +62,7 @@ function SignIn(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Grid item xs={12} sm={6}>
       <main className={classes.layout}>
-      
         <Paper className={classes.paper}>
           <Avatar className={classes.avatar}>
             <LockIcon />
@@ -88,14 +95,12 @@ function SignIn(props) {
               color="primary"
               className={classes.submit}
             >
-              Sign Up
+              Login
             </Button>
-            <Social></Social>
+            <SimpleModalWrapped/>
           </form>
         </Paper>
       </main>
-      </Grid>
-
     </React.Fragment>
   );
 }
