@@ -13,6 +13,7 @@ const styles = {
   },
 };
 
+
 class PriceSlider extends React.Component {
   state = {
     value: 50,
