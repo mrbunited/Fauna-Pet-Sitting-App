@@ -6,9 +6,9 @@ import google from './google.png'
 import config from '../config';
 
 class GoogleLogin extends Component{
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
     
     componentDidMount(){
         (function() {
@@ -23,7 +23,7 @@ class GoogleLogin extends Component{
     
     //Triggering login for google
     googleLogin = () => {
-        let response = null;
+        // let response = null;
         window.gapi.auth.signIn({
             callback: function(authResponse) {
                 this.googleSignInCallback( authResponse )
@@ -66,7 +66,7 @@ class GoogleLogin extends Component{
                 console.log( e );
                 return;
             }
-        }.bind(this));
+        });
     }
     
     render(){

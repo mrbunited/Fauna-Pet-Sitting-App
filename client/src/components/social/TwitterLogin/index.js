@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 //Assets
-import linkedin from './linkedin.png'
+import twitter from './twitter.png'
 
 import config from '../config';
 
-class LinkedinLogin extends Component{
-    constructor(props) {
-        super(props)
-    }
+class TwitterLogin extends Component{
+    // constructor(props) {
+    //     super(props)
+    // }
     
     componentDidMount(){
         (function() {
@@ -47,9 +47,9 @@ class LinkedinLogin extends Component{
     }
     render(){
         return(
-            <img src={linkedin} title="linkedin login" alt="linkedin" onClick={ () => this.linkedinLogin() }/>
+            <img src={twitter} title="twitter login" alt="twitter" onClick={ () => this.TwitterLogin() }/>
         )
     }
 }
 
-export default LinkedinLogin;
+export default TwitterLogin;

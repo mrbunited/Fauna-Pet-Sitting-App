@@ -13,4 +13,8 @@ router
   .put(petSittersController.update)
   .delete(petSittersController.remove);
 
+router
+.route("/byanimal")
+.post(petSittersController.findByAnimal)
+
 module.exports = router;

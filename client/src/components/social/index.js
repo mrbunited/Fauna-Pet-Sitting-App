@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 //Components
 import FacebookLogin from './FacebookLogin/'
 import GoogleLogin from './GoogleLogin/'
-import LinkedinLogin from './LinkedinLogin/'
+import TwitterLogin from './TwitterLogin/'
 
 //import config from '../../../config';
 
@@ -16,7 +16,7 @@ class Social extends Component{
                 <p>
                     <FacebookLogin />
                     <GoogleLogin />
-                    <LinkedinLogin />
+                    <TwitterLogin />
                 </p>
             </div>
         )
