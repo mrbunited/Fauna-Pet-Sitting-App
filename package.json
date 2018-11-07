@@ -32,6 +32,8 @@
     "if-env": "^1.0.4",
     "jquery": "^3.3.1",
     "mongoose": "^5.0.17",
+    "react-google-login": "^3.2.1",
+    "react-google-login-component": "^0.9.3",
     "react-reorder": "^3.0.0-alpha.7"
   }
 }

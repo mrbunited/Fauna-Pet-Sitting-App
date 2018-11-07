@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import Grid from '@material-ui/core/Grid';
 import CustomerPage from './pages/CustomerPage';
 import MainPage from './pages/MainPage'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import './index.css'
 
 class App extends Component {
@@ -20,9 +20,11 @@ class App extends Component {
       <Router>
       <Switch>       
         <Route exact path="/" component={MainPage} />
-        <Route exact path="/customer/:id" component={CustomerPage} />
+        <Route exact path="/customer/" component={CustomerPage} />
         {/* <Route component={NoMatch} /> */}
-      </Switch> 
+        
+      </Switch>
+
       </Router>
       </Grid>
     </div>

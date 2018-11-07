@@ -13,7 +13,13 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Grid from '@material-ui/core/Grid';
+// import Login from './Login/Login';
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+
+
 import Social from '../social/index';
+
 
 const styles = theme => ({
   layout: {
@@ -46,6 +52,9 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 3,
   },
 });
+
+
+
 
 function SignIn(props) {
   const { classes } = props;
@@ -90,7 +99,14 @@ function SignIn(props) {
             >
               Sign Up
             </Button>
-            <Social></Social>
+
+
+            <Social onClick={() => {
+      // context.history.push === history.push
+      props.history.push('/customer')
+    }}>
+
+              </Social>
           </form>
         </Paper>
       </main>
