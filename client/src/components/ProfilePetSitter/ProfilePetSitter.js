@@ -50,7 +50,7 @@ const styles = theme => ({
 });
 
 
-class PetSitterProfile extends React.Component {
+class ProfilePetSitter extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -61,18 +61,22 @@ class PetSitterProfile extends React.Component {
    petsitters: []
   };
 
+
   componentDidMount() {
-    this.getPetSitter();
+    this.getPetSitters();
   }
 
-  getPetSitter = () => {
-    API.getPetSitter()
-      .then(res => this.setState({ petsitters: res.data }))
+  getPetSitters = () => {
+    API.getPetSitters()
+      .then(res =>  this.setState({ petsitters: res.data })
+)
       .catch(err => console.log(err));
   };
 
   render() {
     const { classes } = this.props;
+
+    
     return (
       <Container fluid>
         <Row>
@@ -81,23 +85,32 @@ class PetSitterProfile extends React.Component {
               <List>
                 {this.state.petsitters.map(petsitters => (
                   <ListItem key={petsitters._id}>
-                   
-
                         
 <Card className={classes.card}>
         <CardHeader
+<<<<<<< HEAD:client/src/components/PetSItterProfile/PetSItterProfile.js
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
                {/* <a href={"/petsitters/" + petsitters._id}/> */}
             </Avatar>
           }
+=======
+          
+>>>>>>> 8f89b1e098a39b5f47efbe874d8fecc699c519d8:client/src/components/ProfilePetSitter/ProfilePetSitter.js
           action={
             <Button>
             Book Now
             </Button>
           }
+          avatar={
+            <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
+               <a href={"/petsitters/" + petsitters._id}></a>
+            </Avatar>
+          }
+          disableTypography = {false}
           title={petsitters.first_name}
-          subheader={petsitters.address.zip}
+          subheader={petsitters.address.city}
+          // subheaderTypographyProps={<Typography><p> Full address : {petsitters.address.street} {petsitters.address.city} {petsitters.address.state} {petsitters.address.zip}</p></Typography>}
         />
         <CardContent>
           <Typography component="p">
@@ -146,8 +159,12 @@ I am an amazing pet sitter with experience with a wide array of animals. I will 
 }
 
 
+<<<<<<< HEAD:client/src/components/PetSItterProfile/PetSItterProfile.js
 PetSitterProfile.propTypes = {  
+=======
+ProfilePetSitter.propTypes = {
+>>>>>>> 8f89b1e098a39b5f47efbe874d8fecc699c519d8:client/src/components/ProfilePetSitter/ProfilePetSitter.js
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles) (PetSitterProfile);
+export default withStyles(styles) (ProfilePetSitter);
