@@ -88,15 +88,7 @@ class ProfilePetSitter extends React.Component {
                         
 <Card className={classes.card}>
         <CardHeader
-<<<<<<< HEAD:client/src/components/PetSItterProfile/PetSItterProfile.js
-          avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
-               {/* <a href={"/petsitters/" + petsitters._id}/> */}
-            </Avatar>
-          }
-=======
           
->>>>>>> 8f89b1e098a39b5f47efbe874d8fecc699c519d8:client/src/components/ProfilePetSitter/ProfilePetSitter.js
           action={
             <Button>
             Book Now
@@ -104,7 +96,7 @@ class ProfilePetSitter extends React.Component {
           }
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
-               <a href={"/petsitters/" + petsitters._id}></a>
+               {/* <a href={"/petsitters/" + petsitters._id}></a> */}
             </Avatar>
           }
           disableTypography = {false}
@@ -159,11 +151,7 @@ I am an amazing pet sitter with experience with a wide array of animals. I will 
 }
 
 
-<<<<<<< HEAD:client/src/components/PetSItterProfile/PetSItterProfile.js
-PetSitterProfile.propTypes = {  
-=======
 ProfilePetSitter.propTypes = {
->>>>>>> 8f89b1e098a39b5f47efbe874d8fecc699c519d8:client/src/components/ProfilePetSitter/ProfilePetSitter.js
   classes: PropTypes.object.isRequired,
 };
 
