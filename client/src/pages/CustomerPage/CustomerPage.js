@@ -9,6 +9,10 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Maps from "../../components/Maps";
+import BookingModal from "../../components/BookingModal";
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
 
 
 const styles = theme => ({
@@ -25,7 +29,20 @@ const styles = theme => ({
   },
 });
 
+
+
+
+
+
 class CustomerPage extends Component {
+  state = {
+    petsitters: []
+  }
+
+
+
+
+
 
 
   render() {
@@ -37,28 +54,30 @@ class CustomerPage extends Component {
       <Grid container>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            
+
             <Grid container>
               <Grid item sm>
                 <h1> Find your pet-sitter!</h1>
               </Grid>
-              
-              <Grid item sm> 
+
+              <Grid item sm>
                 <Picker />
               </Grid>
-              
+
               <Grid item sm>
                 <SelectionBar />
               </Grid>
-              
+
               <Grid item sm>
                 <PriceSlider />
               </Grid>
-              
-              <Grid item sm>
-                <Button variant="contained" color="primary" className={classes.button}> Search </Button>
-              </Grid>
 
+
+
+              <Grid item sm>
+
+                <BookingModal />
+              </Grid>
             </Grid>
 
           </Paper>
@@ -68,19 +87,38 @@ class CustomerPage extends Component {
           <ProfilePetSitter />
         </Grid>
 
+
+        {/* <Grid item md>
+          {this.state.petsitters.length ? (
+            <List>
+              {this.state.petsitters.map(petsitters => (
+                <ListItem key={petsitters._id}>
+                  <Typography paragraph>
+                    Additional info about the pet sitter from database
+              <p> Full name : {petsitters.first_name}   {petsitters.last_name} </p>
+                  </Typography>
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+            <h3>No Results to Display</h3>
+          )}
+          </Grid> */}
+
+
         <Grid item md>
-          <Maps />
-        </Grid>
+            <Maps />
+          </Grid>
 
-      </Grid>
-
-    );
-  }
-};
-
-
+        
+</Grid>
+        );
+      }
+    };
+    
+    
 CustomerPage.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(CustomerPage);
+          classes: PropTypes.object.isRequired,
+      };
+      
+      export default withStyles(styles)(CustomerPage);
