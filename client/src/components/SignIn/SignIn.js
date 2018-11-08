@@ -14,6 +14,8 @@ import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import SimpleModalWrapped from '../SimpleModalWrapped/SimpleModalWrapped';
 // import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Social from '../social/index';
 
 const styles = theme => ({
   layout: {
