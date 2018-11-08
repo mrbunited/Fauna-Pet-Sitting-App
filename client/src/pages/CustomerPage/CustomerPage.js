@@ -5,14 +5,14 @@ import SelectionBar from '../../components/SelectionBar';
 import PriceSlider from '../../components/PriceSlider';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Maps from "../../components/Maps";
 import BookingModal from "../../components/BookingModal";
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Typography from '@material-ui/core/Typography';
+// import List from '@material-ui/core/List';
+// import ListItem from '@material-ui/core/ListItem';
+// import Typography from '@material-ui/core/Typography';
 
 
 const styles = theme => ({
@@ -57,7 +57,7 @@ class CustomerPage extends Component {
 
             <Grid container>
               <Grid item sm>
-                <h1> Find your pet-sitter!</h1>
+                <h1> Book your Sitter!</h1>
               </Grid>
 
               <Grid item sm>

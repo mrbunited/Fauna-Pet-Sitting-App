@@ -17,7 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import BookNowModal from "../../components/BookNowModal";
-import SelectionBar from "../SelectionBar"
+// import SelectionBar from "../SelectionBar"
 
 const styles = theme => ({
   card: {
