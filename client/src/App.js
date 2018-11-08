@@ -15,7 +15,13 @@ class App extends Component {
 
       <Nav />
               
-              <Router></Router>
+              <Router>
+            <Switch>       
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/customer/:id" component={CustomerPage} />
+        {/* <Route component={NoMatch} /> */}
+      </Switch> 
+      </Router>
         
                 <SignIn/>
                
