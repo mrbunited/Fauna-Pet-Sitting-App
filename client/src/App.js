@@ -4,16 +4,17 @@ import './App.css';
 // import Nav from "./components/Nav";
 import Grid from '@material-ui/core/Grid';
 import CustomerPage from './pages/CustomerPage';
-import MainPage from './pages/MainPage'
+import MainPage from './pages/MainPage';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './index.css'
+import './index.css';
 
 class App extends Component {
   render() {
     return (
       <div>
 
-      <Nav />
+      {/* <Nav /> */}
               
               <Router>
             <Switch>       
@@ -23,7 +24,7 @@ class App extends Component {
       </Switch> 
       </Router>
         
-                <SignIn/>
+                {/* <SignIn/> */}
                
     </div>
 

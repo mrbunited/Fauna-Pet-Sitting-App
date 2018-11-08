@@ -90,6 +90,7 @@ function SignIn(props) {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
+            
             <Button
               type="submit"
               fullWidth
@@ -99,8 +100,11 @@ function SignIn(props) {
             >
               Login
             </Button>
+            
             <SimpleModalWrapped/>
+            <Social />
           </form>
+          
         </Paper>
       </main>
     </React.Fragment>

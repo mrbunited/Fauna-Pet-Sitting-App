@@ -67,11 +67,11 @@ class ProfilePetSitter extends React.Component {
     // this.getPetSitters();
   }
 
-static getPetSitters = (animalType) => {
+static getPetSitters = () => {
     // console.log(animalType);
 
     API.getPetSitters()
-      .then(res =>  ProfilePetSitter.setState({ petsitters: res.data }
+      .then(res =>  this.setState({ petsitters: res.data }
          
         )
 
