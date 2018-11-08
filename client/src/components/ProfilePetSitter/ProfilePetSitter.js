@@ -16,6 +16,8 @@ import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import BookNowModal from "../../components/BookNowModal";
+// import SelectionBar from "../SelectionBar"
 
 const styles = theme => ({
   card: {
@@ -51,27 +53,36 @@ const styles = theme => ({
 
 
 class ProfilePetSitter extends React.Component {
-  state = { expanded: false };
+  state = { 
+    expanded: false,
+    petsitters: [],
+    
+  };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
   
-  state = {
-   petsitters: []
-  };
-
-
   componentDidMount() {
-    this.getPetSitters();
+    // this.getPetSitters();
   }
 
-  getPetSitters = () => {
+static getPetSitters = (animalType) => {
+    // console.log(animalType);
+
     API.getPetSitters()
-      .then(res =>  this.setState({ petsitters: res.data })
+      .then(res =>  ProfilePetSitter.setState({ petsitters: res.data }
+         
+        )
+
 )
       .catch(err => console.log(err));
+console.log(this.state.petsitters); 
+// console.log("helloworld");
   };
+
+
+
 
   render() {
     const { classes } = this.props;
@@ -90,9 +101,7 @@ class ProfilePetSitter extends React.Component {
         <CardHeader
           
           action={
-            <Button>
-            Book Now
-            </Button>
+<BookNowModal />
           }
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
