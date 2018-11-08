@@ -2,17 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Button from '@material-ui/core/Button';
+
+
 
 const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
+
+  root: {
+    flexGrow: 1,
+    margin: theme.spacing.unit *10,
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
+
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.primary,
+    marginTop: theme.spacing.unit,
   },
   dense: {
     marginTop: 16,
@@ -20,33 +35,47 @@ const styles = theme => ({
   menu: {
     width: 200,
   },
+  button: {
+    margin: theme.spacing.unit,
+  },
+  input: {
+    display: 'none',
+  },
 });
-
-const currencies = [
+const pettype = [
   {
-    value: 'USD',
-    label: '$',
+    value: 'Snake',
+    label: 'Snake',
   },
   {
-    value: 'EUR',
-    label: '€',
+    value: 'Tarantula',
+    label: 'Tarantula',
   },
   {
-    value: 'BTC',
-    label: '฿',
+    value: 'Frog',
+    label: 'Frog',
   },
   {
-    value: 'JPY',
-    label: '¥',
+    value: 'Turtle',
+    label: 'Turtle',
+  },
+  {
+    value: 'Fish',
+    label: 'Fish',
+  },
+  {
+    value: 'Rabbit',
+    label: 'Rabbbit',
   },
 ];
 
+
+
 class FilledTextFields extends React.Component {
   state = {
-    name: 'Cat in the Hat',
+    name: '',
     age: '',
     multiline: 'Controlled',
-    currency: 'EUR',
   };
 
   handleChange = name => event => {
@@ -59,223 +88,159 @@ class FilledTextFields extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form className={classes.container} noValidate autoComplete="off">
-        <TextField
-          id="filled-name"
-          label="Name"
-          className={classes.textField}
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-uncontrolled"
-          label="Uncontrolled"
-          defaultValue="foo"
-          className={classes.textField}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          required
-          id="filled-required"
-          label="Required"
-          defaultValue="Hello World"
-          className={classes.textField}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          error
-          id="filled-error"
-          label="Error"
-          defaultValue="Hello World"
-          className={classes.textField}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          disabled
-          id="filled-disabled"
-          label="Disabled"
-          defaultValue="Hello World"
-          className={classes.textField}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-email-input"
-          label="Email"
-          className={classes.textField}
-          type="email"
-          name="email"
-          autoComplete="email"
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-password-input"
-          label="Password"
-          className={classes.textField}
-          type="password"
-          autoComplete="current-password"
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-read-only-input"
-          label="Read Only"
-          defaultValue="Hello World"
-          className={classes.textField}
-          margin="normal"
-          InputProps={{
-            readOnly: true,
-          }}
-          variant="filled"
-        />
-        <TextField
-          id="filled-dense"
-          label="Dense"
-          className={classNames(classes.textField, classes.dense)}
-          margin="dense"
-          variant="filled"
-        />
-        <TextField
-          id="filled-multiline-flexible"
-          label="Multiline"
-          multiline
-          rowsMax="4"
-          value={this.state.multiline}
-          onChange={this.handleChange('multiline')}
-          className={classes.textField}
-          margin="normal"
-          helperText="hello"
-          variant="filled"
-        />
-        <TextField
-          id="filled-multiline-static"
-          label="Multiline"
-          multiline
-          rows="4"
-          defaultValue="Default Value"
-          className={classes.textField}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-helperText"
-          label="Helper text"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-with-placeholder"
-          label="With placeholder"
-          placeholder="Placeholder"
-          className={classes.textField}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-textarea"
-          label="Multiline Placeholder"
-          placeholder="Placeholder"
-          multiline
-          className={classes.textField}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-number"
-          label="Number"
-          value={this.state.age}
-          onChange={this.handleChange('age')}
-          type="number"
-          className={classes.textField}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-search"
-          label="Search field"
-          type="search"
-          className={classes.textField}
-          margin="normal"
-          variant="filled"
-        />
-        <TextField
-          id="filled-select-currency"
-          select
-          label="Select"
-          className={classes.textField}
-          value={this.state.currency}
-          onChange={this.handleChange('currency')}
-          SelectProps={{
-            MenuProps: {
-              className: classes.menu,
-            },
-          }}
-          helperText="Please select your currency"
-          margin="normal"
-          variant="filled"
-        >
-          {currencies.map(option => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          id="filled-select-currency-native"
-          select
-          label="Native select"
-          className={classes.textField}
-          value={this.state.currency}
-          onChange={this.handleChange('currency')}
-          SelectProps={{
-            native: true,
-            MenuProps: {
-              className: classes.menu,
-            },
-          }}
-          helperText="Please select your currency"
-          margin="normal"
-          variant="filled"
-        >
-          {currencies.map(option => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </TextField>
-        <TextField
-          id="filled-full-width"
-          label="Label"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
-          fullWidth
-          margin="normal"
-          variant="filled"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField
-          id="filled-bare"
-          className={classes.textField}
-          defaultValue="Bare"
-          margin="normal"
-          variant="filled"
-        />
-      </form>
+      <div className={classes.root}>
+        <Grid container spacing={24} direction="row"
+          justify="center"
+          alignItems="center"
+          >
+          <Grid item xs={12}>
+            <Paper className={classes.paper}> <Typography component="h5" variant="h6" gutterBottom>CUSTOMER SIGNUP
+              </Typography></Paper>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              id="firstName"
+              name="firstName"
+              label="First name"
+              fullWidth
+              autoComplete="fname"
+              marginLeft= "theme.spacing.unit *10"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              id="lastName"
+              name="lastName"
+              label="Last name"
+              fullWidth
+              autoComplete="lname"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="address1"
+              name="address1"
+              label="Address line 1"
+              fullWidth
+              autoComplete="billing address-line1"
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              id="addiress2"
+              name="addiress2"
+              label="Address line 2"
+              fullWidth
+              autoComplete="billing address-line2"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              id="city"
+              name="city"
+              label="City"
+              fullWidth
+              autoComplete="billing address-level2"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField id="state" name="state" label="State/Province/Region" fullWidth />
+          </Grid>
+          <Grid item xs={12} sm={6} >
+            <TextField
+              required
+              id="zip"
+              name="zip"
+              label="Zip / Postal code"
+              fullWidth
+              autoComplete="billing postal-code"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              id="country"
+              name="country"
+              label="Country"
+              fullWidth
+              autoComplete="billing country"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="filled-select-pettype-native"
+              select
+              label="PET 1"
+              className={classes.textField}
+              value={this.state.pettype}
+              onChange={this.handleChange('pettype')}
+              SelectProps={{
+                native: true,
+                MenuProps: {
+                  className: classes.menu,
+                },
+              }}
+              helperText="Please Select Your Pet"
+              margin="normal"
+              variant="filled"
+            >
+              {pettype.map(option => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextField>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              id="filled-select-pettype-native"
+              select
+              label="PET 2"
+              className={classes.textField}
+              value={this.state.pettype}
+              onChange={this.handleChange('pettype')}
+              SelectProps={{
+                native: true,
+                MenuProps: {
+                  className: classes.menu,
+                },
+              }}
+              helperText="Please Select Your Pet"
+              margin="normal"
+              variant="filled"
+            >
+              {pettype.map(option => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </TextField>
+          </Grid>
+          <Grid item xs={24} sm={12}>
+            <TextField
+              id="Special Instruction"
+              label="Special Instruction"
+              multiline
+              fullWidth
+              rows="4"
+              className={classes.textField}
+            // variant="filled"
+            />
+          </Grid>
+          <Grid item xs={24} sm={12}>
+            <Button variant="contained" color="primary"  className={classes.button}>
+              Register
+            </Button>
+          </Grid>
+
+        </Grid>
+      </div>
+
+
     );
   }
 }

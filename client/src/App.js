@@ -13,18 +13,18 @@ class App extends Component {
     return (
       <div>
 
-      {/* <Nav /> */}
-
-      <Grid container> 
-
-      <Router>
-      <Switch>       
+      <Nav />
+              
+              <Router>
+            <Switch>       
         <Route exact path="/" component={MainPage} />
         <Route exact path="/customer/:id" component={CustomerPage} />
         {/* <Route component={NoMatch} /> */}
       </Switch> 
       </Router>
-      </Grid>
+        
+                <SignIn/>
+               
     </div>
 
 
