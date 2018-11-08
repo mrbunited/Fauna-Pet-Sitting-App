@@ -9,6 +9,7 @@ import fish from '../../images/fish.jpg';
 import snake from '../../images/snake.jpg';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import AppBar from '@material-ui/core/AppBar';
 
 
 const styles = theme => ({
