@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 // import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import API from "../../utils/API";
-import ProfilePetSitter from "../ProfilePetSitter"
+// import ProfilePetSitter from "../ProfilePetSitter"
 
 const styles = theme => ({
   container: {
