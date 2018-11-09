@@ -64,21 +64,14 @@ class ProfilePetSitter extends React.Component {
   };
   
   componentDidMount() {
-    // this.getPetSitters();
+    this.getPetSitters();
   }
 
-static getPetSitters = () => {
-    // console.log(animalType);
-
+  getPetSitters = () => {
     API.getPetSitters()
-      .then(res =>  this.setState({ petsitters: res.data }
-         
-        )
-
+      .then(res =>  this.setState({ petsitters: res.data })
 )
       .catch(err => console.log(err));
-console.log(this.state.petsitters); 
-// console.log("helloworld");
   };
 
 
