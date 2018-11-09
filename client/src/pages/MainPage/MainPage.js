@@ -8,13 +8,9 @@ const MainPage = () => (
   
 
   <Grid container> 
-  <Grid item lg>
-    <Nav />
-    </Grid>
-
-    <Grid item md>
+  <Nav />
+  <Grid container>
   <SignIn spacing={8} />
-  
   </Grid>
 {/* <PetSitter spacing={8} /> */}
 </Grid>
