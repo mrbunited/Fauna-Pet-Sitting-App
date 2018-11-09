@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Nav from "./components/Nav";
-import SignIn from "./components/SignIn";
-import Grid from '@material-ui/core/Grid';
+
+// import Nav from "./components/Nav";
+// import Grid from '@material-ui/core/Grid';
+
 import CustomerPage from './pages/CustomerPage';
 import MainPage from './pages/MainPage';
 
@@ -20,7 +21,7 @@ class App extends Component {
               <Router>
             <Switch>       
         <Route exact path="/" component={MainPage} />
-        <Route exact path="/customer/:id" component={CustomerPage} />
+        <Route exact path="/customer/1" component={CustomerPage} />
         {/* <Route component={NoMatch} /> */}
       </Switch> 
       </Router>
