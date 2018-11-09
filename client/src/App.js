@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Nav from "./components/Nav";
-import SignIn from "./components/SignIn";
-import Grid from '@material-ui/core/Grid';
+
+// import Nav from "./components/Nav";
+// import Grid from '@material-ui/core/Grid';
+
 import CustomerPage from './pages/CustomerPage';
 import MainPage from './pages/MainPage';
 
