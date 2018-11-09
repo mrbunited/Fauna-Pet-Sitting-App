@@ -84,11 +84,9 @@ class ProfilePetSitter extends React.Component {
   // }
   componentDidMount() {
     this.getPetSitters();
-    // this.findByAnimal();
   }
 
 getPetSitters = () => {
-    console.log();
     API.getPetSitters()
       .then(res =>  this.setState({ petsitters: res.data })
 )
