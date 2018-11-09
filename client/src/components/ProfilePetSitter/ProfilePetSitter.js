@@ -16,6 +16,7 @@ import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import { withRouter } from 'react-router-dom';
 
 const styles = theme => ({
   card: {
@@ -73,6 +74,12 @@ class ProfilePetSitter extends React.Component {
       .catch(err => console.log(err));
   };
 
+  handleBook = (petsitterId) => {
+    console.log(petsitterId);
+    console.log(this.props);
+    this.props.history.push('/appointment/' + this.props.match.params.id +"/" +petsitterId);
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -90,7 +97,7 @@ class ProfilePetSitter extends React.Component {
         <CardHeader
           
           action={
-            <Button>
+            <Button onClick={()=>{ this.handleBook(petsitters._id)}}>
             Book Now
             </Button>
           }
@@ -155,4 +162,4 @@ ProfilePetSitter.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles) (ProfilePetSitter);
+export default withRouter(withStyles(styles) (ProfilePetSitter));
