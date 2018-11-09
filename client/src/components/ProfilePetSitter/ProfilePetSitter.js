@@ -129,7 +129,7 @@ getPetSitters = () => {
 <BookNowModal />
           }
           avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
+            <Avatar aria-label="Recipe" className={classes.avatar} src={petsitters.picture}>
                {/* <a href={"/petsitters/" + petsitters._id}></a> */}
             </Avatar>
           }
