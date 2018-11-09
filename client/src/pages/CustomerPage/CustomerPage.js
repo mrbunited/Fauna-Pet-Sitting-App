@@ -38,13 +38,6 @@ class CustomerPage extends Component {
   state = {
     petsitters: []
   }
-
-
-
-
-
-
-
   render() {
 
     const { classes } = this.props;
@@ -86,26 +79,6 @@ class CustomerPage extends Component {
         <Grid item md>
           <ProfilePetSitter />
         </Grid>
-
-
-        {/* <Grid item md>
-          {this.state.petsitters.length ? (
-            <List>
-              {this.state.petsitters.map(petsitters => (
-                <ListItem key={petsitters._id}>
-                  <Typography paragraph>
-                    Additional info about the pet sitter from database
-              <p> Full name : {petsitters.first_name}   {petsitters.last_name} </p>
-                  </Typography>
-                </ListItem>
-              ))}
-            </List>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
-          </Grid> */}
-
-
         <Grid item md>
             <Maps />
           </Grid>
