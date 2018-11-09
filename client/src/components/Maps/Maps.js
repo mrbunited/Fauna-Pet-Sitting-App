@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { isThisSecond } from 'date-fns';
 // import { typography } from 'material-ui/styles';
+import Grid from '@material-ui/core/Grid';
 
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
@@ -38,11 +39,13 @@ class GoogleMapsContainer extends React.Component {
   }
   render() {
     const style = {
-        width: '49%',
-        height: '100%',
+        width: '800px',
+        height: '800px',
         position: "fixed",
+        
         }
     return (
+      <Grid container>
       <Map
         item
         xs = { 12 }
@@ -105,6 +108,7 @@ class GoogleMapsContainer extends React.Component {
           </Paper>
         </InfoWindow>
       </Map>
+      </Grid>
     );
   }
 }
