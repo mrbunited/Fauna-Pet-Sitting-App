@@ -1,40 +1,28 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-// import Nav from "./components/Nav";
+import Nav from "./components/Nav";
+import SignIn from "./components/SignIn";
 import Grid from '@material-ui/core/Grid';
 import CustomerPage from './pages/CustomerPage';
-<<<<<<< HEAD
 import MainPage from './pages/MainPage'
 import BookAppointment from './pages/BookAppointment';
 import { createBrowserHistory } from "history";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './index.css'
 const hist = createBrowserHistory();
-=======
-import MainPage from './pages/MainPage';
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './index.css';
->>>>>>> 7627e91f4a0a732afb51ecb46259fdf4e1118290
 
 class App extends Component {
   render() {
     return (
       <div>
 
-      {/* <Nav /> */}
-<<<<<<< HEAD
+      <Nav />
 
-      <Grid container> 
+      {/* <Grid container>  */}
 
       <Router history={hist}>
       <Switch>       
-=======
-              
-              <Router>
-            <Switch>       
->>>>>>> 7627e91f4a0a732afb51ecb46259fdf4e1118290
         <Route exact path="/" component={MainPage} />
         <Route exact path="/customer/:id" component={CustomerPage} />
         <Route exact path="/appointment/:customerId/:sitterId" component={BookAppointment} />

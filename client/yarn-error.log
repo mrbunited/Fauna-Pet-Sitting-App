@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add import React from react
+  C:\Program Files\nodejs\node.exe C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ahewa\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs;C:\Users\ahewa\AppData\Local\Programs\Python\Python35\Scripts;C:\Users\ahewa\AppData\Local\Programs\Python\Python35;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files\nodejs;C:\Program Files\Heroku\bin;C:\Users\ahewa\AppData\Roaming\npm
@@ -14,17 +14,12 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/React: Not found
-      at Request.params.callback [as _callback] (C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:62126:18)
-      at Request.self.callback (C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:124482:22)
-      at Request.emit (events.js:182:13)
-      at Request.<anonymous> (C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:125454:10)
-      at Request.emit (events.js:182:13)
-      at IncomingMessage.<anonymous> (C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:125376:12)
-      at Object.onceWrapper (events.js:273:13)
-      at IncomingMessage.emit (events.js:187:15)
-      at endReadableNT (_stream_readable.js:1094:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  SyntaxError: c:\Users\ahewa\FullstackCourse\github\Fauna-Pet-Sitting-App\client\package.json: Unexpected token < in JSON at position 291
+      at JSON.parse (<anonymous>)
+      at C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1166:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:92:30)
+      at C:\Users\ahewa\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:103:13
 
 npm manifest: 
   {
@@ -35,7 +30,13 @@ npm manifest:
     "dependencies": {
       "@material-ui/core": "^3.3.1",
       "@material-ui/icons": "^3.0.1",
+      "@material-ui/lab": "^3.0.0-alpha.23",
       "axios": "^0.16.2",
+      "google-maps-react": "^2.0.2",
+  <<<<<<< HEAD
+      "history": "^4.7.2",
+  =======
+  >>>>>>> cb7dfc9cebf25700c9b52b254296f131c69689ae
       "react": "^16.0.0",
       "react-dom": "^16.0.0",
       "react-router-dom": "^4.1.2",
@@ -115,6 +116,15 @@ Lockfile:
     dependencies:
       "@babel/runtime" "7.0.0"
       recompose "^0.29.0"
+  
+  "@material-ui/lab@^3.0.0-alpha.23":
+    version "3.0.0-alpha.23"
+    resolved "https://registry.yarnpkg.com/@material-ui/lab/-/lab-3.0.0-alpha.23.tgz#816e9821c1b25b608856639605ff116584d45b9d"
+    integrity sha512-+wdaCf2oTh8gnuN8QyEYAxiSfMZ8suZMb4fBBVSa1HrxPGFXopOM435lM1WfZAh/BQaogH5DlXIqxkNXIkpJlA==
+    dependencies:
+      "@babel/runtime" "7.1.2"
+      classnames "^2.2.5"
+      keycode "^2.1.9"
   
   "@types/jss@^9.5.6":
     version "9.5.7"
@@ -3712,6 +3722,11 @@ Lockfile:
       object-assign "^4.0.1"
       pify "^2.0.0"
       pinkie-promise "^2.0.0"
+  
+  google-maps-react@^2.0.2:
+    version "2.0.2"
+    resolved "https://registry.yarnpkg.com/google-maps-react/-/google-maps-react-2.0.2.tgz#e03fbba032fe570fb38744bf9cd10b946c591cae"
+    integrity sha512-6cYauGwt22haDUrWxKQ6yoNOqjiuxHo8YYcmb+aBvNICokdXmZOUB6Ah4vD5VexMVlrwP2PFqA/D8sHpEB52KA==
   
   got@^6.7.1:
     version "6.7.1"

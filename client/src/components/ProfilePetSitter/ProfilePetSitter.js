@@ -16,12 +16,7 @@ import red from '@material-ui/core/colors/red';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-<<<<<<< HEAD
 import { withRouter } from 'react-router-dom';
-=======
-import BookNowModal from "../../components/BookNowModal";
-// import SelectionBar from "../SelectionBar"
->>>>>>> 7627e91f4a0a732afb51ecb46259fdf4e1118290
 
 const styles = theme => ({
   card: {
@@ -68,7 +63,7 @@ class ProfilePetSitter extends React.Component {
   };
   
   componentDidMount() {
-    // this.getPetSitters();
+    this.getPetSitters();
   }
 
 getPetSitters = () => {
@@ -85,16 +80,11 @@ console.log(this.state.petsitters);
 // console.log("helloworld");
   };
 
-<<<<<<< HEAD
   handleBook = (petsitterId) => {
     console.log(petsitterId);
     console.log(this.props);
     this.props.history.push('/appointment/' + this.props.match.params.id +"/" +petsitterId);
   }
-=======
-
-
->>>>>>> 7627e91f4a0a732afb51ecb46259fdf4e1118290
 
   render() {
     const { classes } = this.props;
@@ -113,13 +103,9 @@ console.log(this.state.petsitters);
         <CardHeader
           
           action={
-<<<<<<< HEAD
             <Button onClick={()=>{ this.handleBook(petsitters._id)}}>
             Book Now
             </Button>
-=======
-<BookNowModal />
->>>>>>> 7627e91f4a0a732afb51ecb46259fdf4e1118290
           }
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar} src="/placeholder.png">
@@ -182,8 +168,4 @@ ProfilePetSitter.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-<<<<<<< HEAD
 export default withRouter(withStyles(styles) (ProfilePetSitter));
-=======
-export default withStyles(styles) (ProfilePetSitter);
->>>>>>> 7627e91f4a0a732afb51ecb46259fdf4e1118290
