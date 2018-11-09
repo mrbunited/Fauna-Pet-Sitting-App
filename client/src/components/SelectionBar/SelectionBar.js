@@ -6,6 +6,9 @@ import TextField from '@material-ui/core/TextField';
 // import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 // import FormControl from '@material-ui/core/FormControl';
+import Button from '@material-ui/core/Button';
+import API from "../../utils/API";
+// import ProfilePetSitter from "../ProfilePetSitter"
 
 const styles = theme => ({
   container: {
@@ -63,11 +66,9 @@ const animalType = [
 
 
 class SelectionBar extends React.Component {
+
   state = {
-    name: 'Cat in the Hat',
-    age: '',
-    multiline: 'Controlled',
-    currency: 'EUR',
+    animalType: '',
   };
 
   handleChange = name => event => {
@@ -76,39 +77,87 @@ class SelectionBar extends React.Component {
     });
   };
 
+  handleFormSubmit = event => {
+console.log(this.state.animalType)
+    event.preventDefault();
+
+    this.setState({
+      animalType: this.state.animalType,
+    });
+    // ProfilePetSitter.getPetSitters(this.state.animalType);
+  };
+
+
+  componentDidMount() {
+    this.findByAnimal();
+  }
+
+  findByAnimal = () => {
+    API.getPetSitters()
+      .then(res => this.setState({ petsitters: res.data.petExpertise }
+        // console.log(res.data)
+        )
+
+      )
+      .catch(err => console.log(err));
+
+
+  };
+
   render() {
     const { classes } = this.props;
 
     return (
-<Grid>
-      <form className={classes.container} noValidate autoComplete="off">
-            <Grid item>
-        <TextField
-          id="standard-select-animalType"
-          select
-          label="Select"
-          className={classes.animalType}
-          value={this.state.animalType}
-          onChange={this.handleChange('animalType')}
-          SelectProps={{
-            MenuProps: {
-              className: classes.menu,
-            },
-          }}
-          helperText="Please select your animal"
+      <Grid>
+        <form className={classes.container} noValidate autoComplete="off">
+          <Grid item>
+            <TextField
+              id="standard-select-animalType"
+              select
+              label="Select"
+              className={classes.textField}
+              value={this.state.animalType}
+              onChange={this.handleChange('animalType')}
+              SelectProps={{
+                MenuProps: {
+                  className: classes.menu,
+                },
+              }}
+              helperText="Please select your animal"
+              margin="normal"
+            >
+              {animalType.map(option => (
+
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+
+              ))}
+
+            </TextField>
+          </Grid>
+          {/* <Grid>
+          <TextField
+          id="standard-search"
+          label="Search by ZIP"
+          type="search"
+          className={classes.textField}
           margin="normal"
-        >
-          {animalType.map(option => (
-            <Grid item>
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-            </Grid>
-          ))}
-        </TextField>
-        </Grid>
-      </form>
-      </Grid> 
+        /> 
+
+        </Grid> */}
+
+          <Grid item sm>
+            <Button 
+            variant="contained" 
+            color="primary" 
+            className={classes.button}
+            onClick={this.handleFormSubmit}
+            type="submit"
+            > Search </Button>
+          </Grid>
+        </form>
+      </Grid>
     );
   }
 }
