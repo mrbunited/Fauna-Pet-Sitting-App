@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Redirect } from 'react';
 
 //Assets
 import google from './google.png'
@@ -9,7 +9,24 @@ class GoogleLogin extends Component{
     // constructor(props) {
     //     super(props)
     // }
-    
+
+//     state = {
+//         redirect: false
+//       }
+
+//     setRedirect = () => {
+//     this.setState({
+//       redirect: true
+//     })
+//   }
+
+//   renderRedirect = () => {
+//     if (this.state.redirect) {
+//       return <Redirect to='/customer/:id' />
+//     }
+//   }
+
+
     componentDidMount(){
         (function() {
             var e = document.createElement("script");
@@ -71,7 +88,12 @@ class GoogleLogin extends Component{
     
     render(){
         return(
-            <img src={google} title="google login" alt="google" onClick={ () => this.googleLogin() }/>
+            // <div>
+            // {this.renderRedirect()}
+            // <button onClick={this.setRedirect}>
+                <img src={google} title="google login" alt="google" onClick={ () => this.googleLogin() }/>
+    //    </button> 
+    //     </div>
         )
     }
 }

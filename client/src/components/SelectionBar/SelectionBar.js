@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 // import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import API from "../../utils/API";
-// import ProfilePetSitter from "../ProfilePetSitter"
+import ProfilePetSitter from "../ProfilePetSitter";
 
 const styles = theme => ({
   container: {
@@ -88,21 +88,11 @@ console.log(this.state.animalType)
   };
 
 
-  componentDidMount() {
-    this.findByAnimal();
-  }
+  // componentDidMount() {
+  //   this.findByAnimal();
+  // }
 
-  findByAnimal = () => {
-    API.getPetSitters()
-      .then(res => this.setState({ petsitters: res.data.petExpertise }
-        // console.log(res.data)
-        )
-
-      )
-      .catch(err => console.log(err));
-
-
-  };
+ 
 
   render() {
     const { classes } = this.props;
