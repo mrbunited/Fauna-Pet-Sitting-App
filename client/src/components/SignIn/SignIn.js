@@ -16,6 +16,7 @@ import SimpleModalWrapped from '../SimpleModalWrapped/SimpleModalWrapped';
 // import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Social from '../social/index';
+import { Redirect } from 'react-router-dom'
 
 const styles = theme => ({
   layout: {
@@ -58,8 +59,26 @@ const styles = theme => ({
   
 });
 
-function SignIn(props) {
-  const { classes } = props;
+class SignIn extends React.Component {
+  
+  state = {
+    redirect: false
+  }
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/customer/1' />
+    }
+  }
+
+
+  render () {
+
+    const { classes } = this.props;
 
   return (
     <React.Fragment>
@@ -90,17 +109,19 @@ function SignIn(props) {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            
+            <div>
+        {this.renderRedirect()}
             <Button
               type="submit"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick={this.setRedirect}
             >
               Login
             </Button>
-            
+            </div>
             <SimpleModalWrapped/>
             <Social />
           </form>
@@ -110,6 +131,7 @@ function SignIn(props) {
     </React.Fragment>
   );
 }
+};
 
 SignIn.propTypes = {
   classes: PropTypes.object.isRequired,

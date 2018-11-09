@@ -17,7 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import BookNowModal from "../../components/BookNowModal";
-// import SelectionBar from "../SelectionBar"
+import SelectionBar from "../SelectionBar"
 
 const styles = theme => ({
   card: {
@@ -53,35 +53,60 @@ const styles = theme => ({
 
 
 class ProfilePetSitter extends React.Component {
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     animalType: [],
+  //     expanded: false,
+  //     petsitters: [],
+  //     };
+  //    }
+
+
+    //  myCallback = (animalType) => {
+    //   this.setState({ animalType: animalType})};
+
   state = { 
+    
     expanded: false,
     petsitters: [],
-    
   };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
-  
+
+  // componentWillMount(){
+  //    this.setState= ({
+  //     animalType : this.props.animalType
+  //   })
+  // }
   componentDidMount() {
-    // this.getPetSitters();
+    this.getPetSitters();
+    // this.findByAnimal();
   }
 
 getPetSitters = () => {
-    // console.log(animalType);
-
+    console.log();
     API.getPetSitters()
-      .then(res =>  this.setState({ petsitters: res.data }
-         
-        )
-
+      .then(res =>  this.setState({ petsitters: res.data })
 )
       .catch(err => console.log(err));
-console.log(this.state.petsitters); 
-// console.log("helloworld");
   };
 
 
+
+  // findByAnimal = (animalType) => {
+  //   console.log(this.state.animalType);
+  //   API.getPetSitters()
+  //     .then(res => this.setState({ petsitters: res.data},
+  //       console.log(res.data),
+  //       console.log(this.state.animalType)
+  //       )
+  //     )
+  //     .catch(err => console.log(err));
+  // };
 
 
   render() {
@@ -132,12 +157,10 @@ I am an amazing pet sitter with experience with a wide array of animals. I will 
         
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>Method:</Typography>
             <Typography paragraph>
-              Additional info about the pet sitter from database
-              <p> Full name : {petsitters.first_name}   {petsitters.last_name} </p>
+              <p1> Full name : {petsitters.first_name}   {petsitters.last_name} </p1>
               <p> Full address : {petsitters.address.street} {petsitters.address.city} {petsitters.address.state} {petsitters.address.zip}</p>
-
+<p>Pet expertise : {petsitters.petExpertise[0]}, {petsitters.petExpertise[1]}, {petsitters.petExpertise[2]}, {petsitters.petExpertise[3]}</p>
               
               
               
