@@ -67,7 +67,7 @@ class ProfilePetSitter extends React.Component {
     // this.getPetSitters();
   }
 
-static getPetSitters = () => {
+getPetSitters = () => {
     // console.log(animalType);
 
     API.getPetSitters()
