@@ -48,7 +48,12 @@ class SimpleModal extends React.Component {
 
     return (
       <div>
-        <Button onClick={this.handleOpen}>View Your Bookings</Button>
+        <Button onClick={this.handleOpen}
+        variant="contained" 
+        color="primary" 
+        className={classes.button}
+        type="submit"
+        >View Your Bookings</Button>
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
