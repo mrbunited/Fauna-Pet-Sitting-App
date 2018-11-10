@@ -3,12 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-// import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-// import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
-import API from "../../utils/API";
-import ProfilePetSitter from "../ProfilePetSitter";
 
 const styles = theme => ({
   container: {
@@ -62,6 +58,14 @@ const animalType = [
     value: 'bird',
     label: 'bird',
   },
+  {
+    value: 'turtle',
+    label: 'turtle',
+  },
+  {
+    value: 'fish',
+    label: 'fish',
+  }
 ];
 
 
@@ -78,7 +82,7 @@ class SelectionBar extends React.Component {
   };
 
   handleFormSubmit = event => {
-console.log(this.state.animalType)
+    console.log(this.state.animalType)
     event.preventDefault();
 
     this.setState({
@@ -86,13 +90,6 @@ console.log(this.state.animalType)
     });
     // ProfilePetSitter.getPetSitters(this.state.animalType);
   };
-
-
-  // componentDidMount() {
-  //   this.findByAnimal();
-  // }
-
- 
 
   render() {
     const { classes } = this.props;
@@ -126,24 +123,14 @@ console.log(this.state.animalType)
 
             </TextField>
           </Grid>
-          {/* <Grid>
-          <TextField
-          id="standard-search"
-          label="Search by ZIP"
-          type="search"
-          className={classes.textField}
-          margin="normal"
-        /> 
-
-        </Grid> */}
 
           <Grid item sm>
-            <Button 
-            variant="contained" 
-            color="primary" 
-            className={classes.button}
-            onClick={this.handleFormSubmit}
-            type="submit"
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              onClick={this.handleFormSubmit}
+              type="submit"
             > Search </Button>
           </Grid>
         </form>
