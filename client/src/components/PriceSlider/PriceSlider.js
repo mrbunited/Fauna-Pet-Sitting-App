@@ -21,15 +21,15 @@ class PriceSlider extends React.Component {
     value: 50,
   };
 
-  static defaultProps={
-    min:0,
-    max:100,
-    defaultValue:50,
-    range:false,
-    scale:0,
-    direction:'horizontal',
-    onChange:()=>{},
-    onChangeComplete:()=>{}
+  static defaultProps = {
+    min: 0,
+    max: 100,
+    defaultValue: 50,
+    range: false,
+    scale: 0,
+    direction: 'horizontal',
+    onChange: () => { },
+    onChangeComplete: () => { }
   }
 
   handleChange = (event, value) => {
@@ -44,18 +44,18 @@ class PriceSlider extends React.Component {
       <div className={classes.root}>
         <Typography id="label">Price per night</Typography>
 
-<div>
+        <div>
 
-        <Slider
-          classes={{ container: classes.slider }}
-          value={value}
-          aria-labelledby="label"
-          onChange={this.handleChange}
-          defaultValue={5 / 100}
+          <Slider
+            classes={{ container: classes.slider }}
+            value={value}
+            aria-labelledby="label"
+            onChange={this.handleChange}
+            defaultValue={5 / 100}
 
-        />
+          />
 
-</div>
+        </div>
       </div>
     );
   }

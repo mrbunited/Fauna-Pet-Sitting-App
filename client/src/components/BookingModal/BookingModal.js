@@ -49,10 +49,10 @@ class SimpleModal extends React.Component {
     return (
       <div>
         <Button onClick={this.handleOpen}
-        variant="contained" 
-        color="primary" 
-        className={classes.button}
-        type="submit"
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          type="submit"
         >View Your Bookings</Button>
         <Modal
           aria-labelledby="simple-modal-title"
@@ -62,10 +62,12 @@ class SimpleModal extends React.Component {
         >
           <div style={getModalStyle()} className={classes.paper}>
             <Typography variant="h6" id="modal-title">
-              Here are your upcoming bookings
+              Here are your upcoming bookings:
             </Typography>
             <Typography variant="subtitle1" id="simple-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              Date: <br />
+              Time: <br />
+              Pet-Sitter: <br />
             </Typography>
 
           </div>

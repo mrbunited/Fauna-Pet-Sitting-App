@@ -43,6 +43,7 @@ function ButtonAppBar(props) {
   return (
     <div className={classes.root}>
       <Grid container>
+        
         <Grid item xs={12} sm={4}>
           <Paper className={classes.paper}>
             <CardMedia
@@ -50,6 +51,7 @@ function ButtonAppBar(props) {
               image={snake}
             /></Paper>
         </Grid>
+        
         <Grid item xs={12} sm={4}>
           <Paper className={classes.paper}>
             <CardMedia
@@ -57,6 +59,7 @@ function ButtonAppBar(props) {
               image={logo}
             /></Paper>
         </Grid>
+        
         <Grid item xs={12} sm={4}>
           <Paper className={classes.paper}>
             <CardMedia
@@ -64,17 +67,18 @@ function ButtonAppBar(props) {
               image={fish}
             /></Paper>
         </Grid>
-        </Grid>
-        
-        
-        <Toolbar className={classes.tool}>
+      
+      </Grid>
 
-          <Typography variant="h4" className={classes.grow}>
-            Because the world is bigger than cats and dogs
+
+      <Toolbar className={classes.tool}>
+
+        <Typography variant="h4" className={classes.grow}>
+          The world is bigger than cats and dogs.
           </Typography>
 
-        </Toolbar>
-      
+      </Toolbar>
+
 
     </div >
   );
